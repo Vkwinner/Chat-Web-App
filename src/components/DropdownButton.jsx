@@ -6,24 +6,27 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-const DropdownButton = ({ initialValue, onOptionSelect }) => {
+const DropdownButton = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggleDropdown = () => setDropdownOpen(prevState => !prevState);
+  const [styles,setStyles] = useState({})
 
   return (
-    <div className="d-flex justify-content-start align-items-center">
+    <div className="d-flex justify-content-start align-items-start">
       <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} dark flip>
-        <DropdownToggle caret size='md'>{initialValue}</DropdownToggle>
+        <DropdownToggle caret size='md' className="d-flex align-items-center "style={{minWidth:"200px"}} >{props.initialValue} </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem onClick={() => onOptionSelect('Ready for calls')}>
-            Ready for calls
+          <DropdownItem onClick={() => {
+            props.onOptionSelect(props.firstOption)
+            setStyles({styles:{"backgroundColor":"green"}})
+            }}>
+            {props.firstOption}
           </DropdownItem>
-          <DropdownItem onClick={() => onOptionSelect('Away at the moment')}>
-            Away at the moment
+          <DropdownItem onClick={() => props.onOptionSelect(props.secondOption)}>
+            {props.secondOption}
           </DropdownItem>
-          <DropdownItem onClick={() => onOptionSelect('Busy')}>
-            Busy
+          <DropdownItem onClick={() => props.onOptionSelect(props.thirdOption)}>
+            {props.thirdOption}
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
