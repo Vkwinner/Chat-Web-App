@@ -39,7 +39,7 @@ const TopNavbar = () => {
             </NavItem>
           </Nav>
           <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
-            <ToggleSwitch />
+            <ToggleSwitch firstValue="Available" secondValue="Unavailable"/>
             <DottedCircleButton firstValue="Available" secondValue="Not Available" />
             <FaCircleUser style={{ width: "40px", height: "30px", color: "white" }} />
             <DropdownButton initialValue={selectedOption} onOptionSelect={handleOptionSelect} firstValue="Ready for calls" secondValue="Away" thirdValue="Busy" />
