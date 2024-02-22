@@ -65,7 +65,10 @@ const ToggleSwitch = () => {
         <Slider checked={isSwitchOn}></Slider>
       </SwitchLabel>
       <div className='text-center' >
-      <Button size='sm' className='py-0'  style={{fontSize:'16px',marginLeft: '5px', width:'100px' , color:'white',backgroundColor:'#6AC5AB'}} >
+      <Button size='sm' className='py-0'  style={{fontSize:'16px',marginLeft: '5px', width:'100px' , color:'white',backgroundColor: if(isSwitchOn ==="Active"){'#6AC5AB'}
+                                                 else{
+      {'red'
+                                                 }} >
      {isSwitchOn ? 'Active' : 'Inactive'}
       </Button>
       </div>
