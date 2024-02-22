@@ -66,7 +66,7 @@ const ToggleSwitch = (props) => {
       </SwitchLabel>
       <div className='text-center' >
       <Button size='sm' className='py-0'  style={{fontSize:'16px',marginLeft: '5px', width:'100px' , color:'white',backgroundColor:'#6AC5AB' }} >
-     {isSwitchOn ? 'props.firstOption' : 'props.secondOption'}
+     {isSwitchOn ? props.firstValue : props.secondValue}
       </Button>
       </div>
     </div>
